@@ -1,0 +1,32 @@
+{
+  "name": "soloproject",
+  "version": "1.0.0",
+  "description": "# Foobar",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=development webpack",
+    "dev": "NODE_ENV=development webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmu1540/Preventative-Health-Management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmu1540/Preventative-Health-Management/issues"
+  },
+  "homepage": "https://github.com/hmu1540/Preventative-Health-Management#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.19",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
