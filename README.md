@@ -1,4 +1,4 @@
-# Preventative-Health-Management
+# [Preventative-Health-Management](https://github.com/hmu1540/Preventative-Health-Management)
 
 # Foobar
 
@@ -39,3 +39,11 @@ Please make sure to update tests as appropriate.
 [Make a README](https://www.makeareadme.com/)
 
 [Awesome README](https://github.com/matiassingers/awesome-readme)
+
+[Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+[Preventive care benefits for adults](https://www.healthcare.gov/preventive-care-adults/)
+
+[foo (in software programming)](https://www.techtarget.com/searchapparchitecture/definition/foo-in-software-programming)
+
+[Webpack 5 Crash Course | Frontend Development Setup](https://www.youtube.com/watch?v=IZGNcSuwBZs)
