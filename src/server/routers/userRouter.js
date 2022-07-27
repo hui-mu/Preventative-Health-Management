@@ -6,7 +6,7 @@ const path = require('path');
 
 userRouter.post('/signup', userController.createUser, (req, res) => res.redirect(200, '/login')); //front end: display signup page, after user clicks the butto, fire the event, backend save and redirect
 
-userRouter.post('/login', userController.verifyUser, (req, res) => res.redirect(200, '../welcome.html'));
+userRouter.post('/login', userController.verifyUser, (req, res) => res.redirect(200, '/welcome.html'));
 
 userRouter.patch('/reset', userController.resetPassword, (req, res) => res.redirect(200, '/login'));
 

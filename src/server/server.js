@@ -15,23 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 // handle request to static files: directly visiting files under assest/
 // app.get('/', (req, res) => res.json('i am okay!'))
 console.log('???', __dirname)
-app.use(express.static(path.resolve(__dirname, '../asset'))); // absolute path is safe
+app.use(express.static(path.resolve(__dirname, '../client/asset'))); // absolute path is safe
 
 // handle request to authorization: mount/put midware funcs at /auth
-// app.get('/auth/welcome', (req, res) => res.json('are you okay?'));
 app.use('/auth', userRouter); // get /login; post /register; post /reset; get /logout
-
-// userRouter.get('/logout', async (req, res, next) => {
-//   console.log('??', __dirname);
-//   try {
-//     await res.redirect(200, path.resolve(__dirname, '/welcome.html')) // redirect to static page
-//   } catch (err) { next({ message: 'logout request error' }) };
-// });
 
 app.use('/admin', adminRouter);
 
 app.use('/health', healthRouter);
-
 
 // handle req to non-existing pages
 app.use((req, res) => res.status(404).send('You are looking for a page that doesn\'t exist...'));
