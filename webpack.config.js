@@ -14,18 +14,7 @@ module.exports = {
         assetModuleFilename: '[name][ext]',
     },
     devtool: 'source-map',
-    devServer: {
-        static: {
-            directory: path.resolve(__dirname, 'build')
-        },
-        port: 3000,
-        open: true,
-        hot: true,
-        compress: true,
-        historyApiFallback: true,
 
-
-    },
     module: {
         rules: [
             {
@@ -56,6 +45,16 @@ module.exports = {
             // relative to current path
         }),
         new BundleAnalyzerPlugin(),
-    ]
-
+    ],
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'build')
+        },
+        port: 8000,
+        open: true,
+        hot: true,
+        compress: true,
+        historyApiFallback: true,
+        proxy: { '/': 'http://localhost:3000' }
+    },
 }

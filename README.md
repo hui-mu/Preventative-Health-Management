@@ -49,3 +49,7 @@ Please make sure to update tests as appropriate.
 [Webpack 5 Crash Course | Frontend Development Setup](https://www.youtube.com/watch?v=IZGNcSuwBZs)
 
 [Stunning free images & royalty free stock](https://pixabay.com/)
+
+[Using middleware](http://expressjs.com/en/guide/using-middleware.html)
+
+[MyHealthfinder API](https://health.gov/our-work/national-health-initiatives/health-literacy/consumer-health-content/free-web-content/apis-developers/terms-use)
