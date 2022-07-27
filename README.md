@@ -47,3 +47,5 @@ Please make sure to update tests as appropriate.
 [foo (in software programming)](https://www.techtarget.com/searchapparchitecture/definition/foo-in-software-programming)
 
 [Webpack 5 Crash Course | Frontend Development Setup](https://www.youtube.com/watch?v=IZGNcSuwBZs)
+
+[Stunning free images & royalty free stock](https://pixabay.com/)
