@@ -13,11 +13,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // handle request to static files: directly visiting files under assest/
-app.use(express.static(path.resolve(__dirname, './asset'))); // absolute path is safe
+// app.get('/', (req, res) => res.json('i am okay!'))
+console.log('???', __dirname)
+app.use(express.static(path.resolve(__dirname, '../asset'))); // absolute path is safe
 
 // handle request to authorization: mount/put midware funcs at /auth
 // app.get('/auth/welcome', (req, res) => res.json('are you okay?'));
 app.use('/auth', userRouter); // get /login; post /register; post /reset; get /logout
+
+// userRouter.get('/logout', async (req, res, next) => {
+//   console.log('??', __dirname);
+//   try {
+//     await res.redirect(200, path.resolve(__dirname, '/welcome.html')) // redirect to static page
+//   } catch (err) { next({ message: 'logout request error' }) };
+// });
 
 app.use('/admin', adminRouter);
 
@@ -42,8 +51,6 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...!!!`)
 });
-
-module.exports = {}
 
 const { Pool } = require('pg');
 const pg = require('pg');

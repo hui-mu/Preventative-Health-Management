@@ -5,7 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
-        bundle: path.resolve(__dirname, 'src/index.js')
+        bundle: path.resolve(__dirname, 'src/client/index.js')
     },
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -41,7 +41,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Preventative Health Care',
-            template: 'src/index.html'
+            template: 'src/client/index.html'
             // relative to current path
         }),
         new BundleAnalyzerPlugin(),

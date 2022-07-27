@@ -7,4 +7,7 @@ const { healthRouter } = require('../server.js')
 no need interacting with db, simply get data for the front end.
  */
 // post age gender and get healthinfo from API ; 
-// 
+
+// healthRouter.get()
+
+// front end can talk to api directly

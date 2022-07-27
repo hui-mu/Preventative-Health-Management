@@ -1,5 +1,6 @@
 const userController = require('../controllers/userController.js');
-const { userRouter } = require('../server.js')
+const { userRouter } = require('../server.js');
+const path = require('path');
 //  userRouter to divert requests to diff pages
 // post? /login; post /signup; post /reset; get /logout; delete account
 
@@ -9,9 +10,12 @@ userRouter.post('/login', userController.verifyUser, (req, res) => res.redirect(
 
 userRouter.patch('/reset', userController.resetPassword, (req, res) => res.redirect(200, '/login'));
 
-userRouter.get('/logout', (req, res, next) => {
+// userRouter.get('/', (req, res) => { console.log(req); res.json('i am okay!') });
+
+userRouter.get('/logout', async (req, res, next) => {
+  // console.log('??', __dirname);
   try {
-    res.redirect(200, '../welcome.html') // redirect to static page
+    await res.redirect(200, path.resolve(__dirname, '/welcome.html')) // redirect to static page
   } catch (err) { next({ message: 'logout request error' }) };
 });
 
