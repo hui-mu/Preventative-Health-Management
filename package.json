@@ -2,7 +2,7 @@
   "name": "soloproject",
   "version": "1.0.0",
   "description": "# Foobar",
-  "main": "index.js",
+  "main": "src/client/index.js",
   "scripts": {
     "build": "NODE_ENV=development webpack",
     "dev": "concurrently \"NODE_ENV=development webpack serve --open\" \" nodemon src/server/server.js\" "

@@ -1,20 +1,18 @@
 const express = require('express');
 const path = require('path');
+const userRouter = require('./routers/userRouter.js')
+const adminRouter = require('./routers/adminRouter.js')
+const healthRouter = require('./routers/healthRouter.js')
 
 // create a server
 const app = express();
 const PORT = 3000;
-// create a router to construct RESTful routes
-const userRouter = express.Router();
-const adminRouter = express.Router();
-const healthRouter = express.Router();
+
 // parse req body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // handle request to static files: directly visiting files under assest/
-// app.get('/', (req, res) => res.json('i am okay!'))
-console.log('???', __dirname)
 app.use(express.static(path.resolve(__dirname, '../client/asset'))); // absolute path is safe
 
 // handle request to authorization: mount/put midware funcs at /auth
@@ -72,8 +70,5 @@ module.exports = {
   query: (text, params, callback) => {
     console.log('executed query!!!!!', text);
     return pool.query(text, params, callback);
-  },
-  userRouter: userRouter,
-  adminRouter: adminRouter,
-  healthRouter: healthRouter
+  }
 }

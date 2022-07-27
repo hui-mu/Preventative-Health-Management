@@ -1,5 +1,7 @@
 const healthController = require('../controllers/healthController.js');
-const { healthRouter } = require('../server.js')
+const express = require('express');
+
+const healthRouter = express.Router();
 
 // healthRouter to divert requests to diff pages: 
 /*
@@ -11,3 +13,6 @@ no need interacting with db, simply get data for the front end.
 // healthRouter.get()
 
 // front end can talk to api directly
+
+
+module.exports = healthRouter;
