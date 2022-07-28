@@ -66,4 +66,4 @@ class FamilyHealthContainer extends Component {
     </div>
   }
 }
-export default FamilyHealthContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(FamilyHealthContainer);
