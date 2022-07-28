@@ -13,7 +13,7 @@ no need interacting with db, simply get data for the front end.
 // healthRouter.get()
 
 // front end can talk to api directly
-healthRouter.get('/create', (req, res) => res.json("test!!!!!!!!"))
+// healthRouter.get('/create', (req, res) => res.json("test!!!!!!!!"))
 healthRouter.post('/create', (req, res, next) => {
   const {
     userEmail,
@@ -22,12 +22,12 @@ healthRouter.post('/create', (req, res, next) => {
     gender,
     age,
     health } = req.body;
-  console.log("body????????", req.body)
+  // console.log("body????????", req.body)
   const member = new Member(req.body);
   member.save((err, doc) => {
-    console.log('doc???????', doc);
-    if (!err) res.status(200).send('can you see me succeed'); // ??? i can add the same again and again?
-    else return next({ message: 'err in create a member' });
+    // console.log('doc???????', doc);
+    if (!err) { return res.status(200).send('can you see me succeed'); }; // ??? i can add the same again and again?
+    return next({ message: 'err in create a member' });
   });
 
 })

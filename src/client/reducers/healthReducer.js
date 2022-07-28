@@ -47,7 +47,7 @@ const healthReducer = (state = initialState, action) => {
         method: 'POST',
         headers: { 'Content-Type': 'Application/JSON' },
         body: JSON.stringify(newMember)
-      }).then(res => res.json()).then(data => console.log(data));
+      }).then(res => res.json()).then(data => console.log('should see serverside response info', data));
 
       // update state
       memberList = state.memberList.slice();
