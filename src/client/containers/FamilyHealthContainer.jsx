@@ -11,9 +11,9 @@
  */
 
 import React, { Component } from "react";
-import { Connect } from "react-redux";
-import MemberCreator from '../components/MemberCreator';
-import MemberDisplay from '../components/MemberDisplay';
+import { connect } from "react-redux";
+import MemberCreator from '../components/MemberCreator.jsx';
+import MemberDisplay from '../components/MemberDisplay.jsx';
 
 // set action type constants
 const ADD_MEMBER = 'ADD_MEMBER';
@@ -51,7 +51,7 @@ const mapDispatchToProps = dispatch => ({
   deleteMember: (memberId) => dispatch(deleteMemberActionCreator(memberId)),
   addMember: () => dispatch(addMemberActionCreator()),
   setNewMember: (name, gender, age) => dispatch(setNewMemberActionCreator(name, gender, age)),
-  queryHealth: (healthInfo) => dispatch(queryHealthActionCreator(healthInfo)),
+  queryHealth: () => dispatch(queryHealthActionCreator()),
 });
 
 class FamilyHealthContainer extends Component {
@@ -60,10 +60,12 @@ class FamilyHealthContainer extends Component {
   }
 
   render() {
-    <div className="innerbox">
-      <MemberCreator setNewMember={this.props.setNewMember} queryHealth={this.props.queryHealth} addMember={this.props.addMember} />
-      <MemberDisplay memberList={this.props.memberList} />
-    </div>
+    return (
+      <div className="innerbox">
+        <MemberCreator setNewMember={this.props.setNewMember} queryHealth={this.props.queryHealth} addMember={this.props.addMember} />
+        <MemberDisplay memberList={this.props.memberList} deleteMember={this.props.deleteMember} />
+      </div>
+    );
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(FamilyHealthContainer);

@@ -41,34 +41,34 @@ app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...!!!`)
 });
 
-const { Pool } = require('pg');
-const pg = require('pg');
+// const { Pool } = require('pg');
+// const pg = require('pg');
 
-// connect to postgreSQL DB
-const PG_URI = 'postgres://zdbopeth:MSenYjjPc8EJvRTJv26VM7ifqKwht9Pb@lallah.db.elephantsql.com/zdbopeth'
+// // connect to postgreSQL DB
+// const PG_URI = 'postgres://zdbopeth:MSenYjjPc8EJvRTJv26VM7ifqKwht9Pb@lallah.db.elephantsql.com/zdbopeth'
 
-const client = new pg.Client(PG_URI);
-client.connect(function (err) {
-  if (err) {
-    return console.error('could not connect to postgres', err);
-  }
-  client.query('SELECT NOW() AS "theTime"', function (err, result) {
-    if (err) {
-      return console.error('error running query', err);
-    }
-    console.log(result.rows[0].theTime);
-    // >> output: 2022-07-27T01:56:38.254Z
-    client.end();
-  });
-});
+// const client = new pg.Client(PG_URI);
+// client.connect(function (err) {
+//   if (err) {
+//     return console.error('could not connect to postgres', err);
+//   }
+//   client.query('SELECT NOW() AS "theTime"', function (err, result) {
+//     if (err) {
+//       return console.error('error running query', err);
+//     }
+//     console.log(result.rows[0].theTime);
+//     // >> output: 2022-07-27T01:56:38.254Z
+//     client.end();
+//   });
+// });
 
-const pool = new Pool({
-  connectionString: PG_URI
-});
+// const pool = new Pool({
+//   connectionString: PG_URI
+// });
 
-module.exports = {
-  query: (text, params, callback) => {
-    console.log('executed query!!!!!', text);
-    return pool.query(text, params, callback);
-  }
-}
+// module.exports = {
+//   query: (text, params, callback) => {
+//     console.log('executed query!!!!!', text);
+//     return pool.query(text, params, callback);
+//   }
+// }

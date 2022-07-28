@@ -1,0 +1,234 @@
+{
+  "Result": {
+    "Error": "string",
+    "Total": 0,
+    "Query": {
+      "ApiVersion": "string",
+      "ApiType": "string",
+      "TopicId": "string",
+      "ToolId": "string",
+      "CategoryId": "string",
+      "PopulationId": "string",
+      "Keyword": "string",
+      "Who": "string",
+      "Age": "string",
+      "Sex": "string",
+      "Pregnant": "string",
+      "TobaccoUse": "string",
+      "SexuallyActive": "string",
+      "Category": "string",
+      "Lang": "string",
+      "Type": "string",
+      "ReturnType": "string",
+      "Callback": "string",
+      "HealthfinderPage": "string",
+      "APiType": "string"
+    },
+    "Language": "string",
+    "MyHFHeading": "string",
+    "TakeAction": "string",
+    "AboutTheseResults": "string",
+    "Resources": {
+      "Interest": {
+        "Resource": [
+          {
+            "Type": "string",
+            "Id": 0,
+            "Title": "string",
+            "TranslationId": 0,
+            "TranslationTitle": "string",
+            "Categories": "string",
+            "Populations": "string",
+            "MyHFTitle": "string",
+            "MyHFDescription": "string",
+            "MyHFCategory": "string",
+            "MyHFCategoryHeading": "string",
+            "LastUpdate": "string",
+            "ImageUrl": "string",
+            "ImageAlt": "string",
+            "AccessibleVersion": "string",
+            "RelatedItems": {
+              "RelatedItem": [
+                {
+                  "Type": "string",
+                  "Id": 0,
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "Sections": {
+              "Section": [
+                {
+                  "Title": "string",
+                  "Description": "string",
+                  "Content": "string"
+                }
+              ]
+            },
+            "MoreInfoItems": {
+              "MoreInfoItem": [
+                {
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "HealthfinderLogo": "string",
+            "HealthfinderUrl": "string"
+          }
+        ]
+      },
+      "Some": {
+        "Resource": [
+          {
+            "Type": "string",
+            "Id": 0,
+            "Title": "string",
+            "TranslationId": 0,
+            "TranslationTitle": "string",
+            "Categories": "string",
+            "Populations": "string",
+            "MyHFTitle": "string",
+            "MyHFDescription": "string",
+            "MyHFCategory": "string",
+            "MyHFCategoryHeading": "string",
+            "LastUpdate": "string",
+            "ImageUrl": "string",
+            "ImageAlt": "string",
+            "AccessibleVersion": "string",
+            "RelatedItems": {
+              "RelatedItem": [
+                {
+                  "Type": "string",
+                  "Id": 0,
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "Sections": {
+              "Section": [
+                {
+                  "Title": "string",
+                  "Description": "string",
+                  "Content": "string"
+                }
+              ]
+            },
+            "MoreInfoItems": {
+              "MoreInfoItem": [
+                {
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "HealthfinderLogo": "string",
+            "HealthfinderUrl": "string"
+          }
+        ]
+      },
+      "All": {
+        "Resource": [
+          {
+            "Type": "string",
+            "Id": 0,
+            "Title": "string",
+            "TranslationId": 0,
+            "TranslationTitle": "string",
+            "Categories": "string",
+            "Populations": "string",
+            "MyHFTitle": "string",
+            "MyHFDescription": "string",
+            "MyHFCategory": "string",
+            "MyHFCategoryHeading": "string",
+            "LastUpdate": "string",
+            "ImageUrl": "string",
+            "ImageAlt": "string",
+            "AccessibleVersion": "string",
+            "RelatedItems": {
+              "RelatedItem": [
+                {
+                  "Type": "string",
+                  "Id": 0,
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "Sections": {
+              "Section": [
+                {
+                  "Title": "string",
+                  "Description": "string",
+                  "Content": "string"
+                }
+              ]
+            },
+            "MoreInfoItems": {
+              "MoreInfoItem": [
+                {
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "HealthfinderLogo": "string",
+            "HealthfinderUrl": "string"
+          }
+        ]
+      },
+      "Pregnant": {
+        "Resource": [
+          {
+            "Type": "string",
+            "Id": 0,
+            "Title": "string",
+            "TranslationId": 0,
+            "TranslationTitle": "string",
+            "Categories": "string",
+            "Populations": "string",
+            "MyHFTitle": "string",
+            "MyHFDescription": "string",
+            "MyHFCategory": "string",
+            "MyHFCategoryHeading": "string",
+            "LastUpdate": "string",
+            "ImageUrl": "string",
+            "ImageAlt": "string",
+            "AccessibleVersion": "string",
+            "RelatedItems": {
+              "RelatedItem": [
+                {
+                  "Type": "string",
+                  "Id": 0,
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "Sections": {
+              "Section": [
+                {
+                  "Title": "string",
+                  "Description": "string",
+                  "Content": "string"
+                }
+              ]
+            },
+            "MoreInfoItems": {
+              "MoreInfoItem": [
+                {
+                  "Title": "string",
+                  "Url": "string"
+                }
+              ]
+            },
+            "HealthfinderLogo": "string",
+            "HealthfinderUrl": "string"
+          }
+        ]
+      }
+    }
+  }
+}

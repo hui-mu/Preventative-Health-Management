@@ -8,12 +8,6 @@
  *
  * ************************************
  */
-
-import { types } from "pg";
-
-
-export default healthReducer;
-
 // set action type constants
 const ADD_MEMBER = 'ADD_MEMBER';
 const DELETE_MEMBER = 'DELETE_MEMBER'; // delete, increase age and added back to the panel, should be optimized to reflect age automatically
@@ -75,6 +69,13 @@ const healthReducer = (state = initialState, action) => {
       }
     }
     case QUERY_HEALTH: {
+      // const healthInfo = fetch(`https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${state.age}&sex=${state.gender}`, {
+      //   method: 'GET',
+      //   headers: { 'Content-Type': 'application/json' },
+      // })
+      //   .then(res => res.json())
+      //   .then
+      const healthInfo = 'toBeFetchedFromApi'
       return {
         ...state,
         healthInfo: action.payload
@@ -96,3 +97,4 @@ const healthReducer = (state = initialState, action) => {
 }
 
 
+export default healthReducer;
