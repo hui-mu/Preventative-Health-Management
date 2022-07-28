@@ -57,3 +57,8 @@ Please make sure to update tests as appropriate.
 [](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-mongodb)
 
 [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+
+[Where should functions in function components go?](https://stackoverflow.com/questions/46138145/where-should-functions-in-function-components-go)
+
+[Loop inside React JSX](https://stackoverflow.com/questions/22876978/loop-inside-react-jsx)
+[api inside Redux] 

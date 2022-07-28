@@ -44,8 +44,8 @@ const queryHealthActionCreator = (arg) => ({
 
 const mapStateToProps = state => ({
   memberList: state.health.memberList,
-  age: state.age,
-  gender: state.gender,
+  age: state.health.age,
+  gender: state.health.gender,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -60,23 +60,26 @@ const mapDispatchToProps = dispatch => ({
 class FamilyHealthContainer extends Component {
   constructor(props) {
     super(props);
+    this.query = this.query.bind(this);
   }
 
-  async query() {
-    await fetch(`https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${this.props.age}&sex=${this.props.gender}`, {
+  async query(age, gender) {
+    console.log(this.props);
+    await fetch(`https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${age}&sex=${gender}`, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        // 'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
     })
       .then(res => res.json())
       .then(data => {
-        console.log("?????? query api", data.Result.Resources.all.Resource);
-        const resource = data.Result.Resources.all.Resource;
+        console.log("?????? query api", `https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${age}&sex=${gender}`, data);
+        const resource = data.Result.Resources.some.Resource;
         const health = [];
         for (let i = 0; i < resource.length; i++) {
           health.push(resource[i].Title);
         }
-        console.log("inside!!!", health);
-        // console.log('???????', state.name)
         this.props.queryHealth(health);
       })
   };
@@ -84,7 +87,8 @@ class FamilyHealthContainer extends Component {
   render() {
     return (
       <div className="innerbox">
-        <MemberCreator setNewMember={this.props.setNewMember} queryHealth={() => this.query()} addMember={this.props.addMember} />
+        {/* {console.log("props???????", this.props)} */}
+        <MemberCreator setNewMember={this.props.setNewMember} queryHealth={() => { return this.query(this.props.age, this.props.gender); }} addMember={this.props.addMember} />
         <MemberDisplay memberList={this.props.memberList} deleteMember={this.props.deleteMember} />
       </div>
     );

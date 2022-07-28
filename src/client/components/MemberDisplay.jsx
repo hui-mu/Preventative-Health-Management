@@ -19,6 +19,7 @@ const MemberDisplay = props => {
     const { memeberId, name, gender, health } = memberList[i]
     members.push(<Member memeberId={memeberId} name={name} gender={gender} health={health} id={i} key={i} deleteMember={deleteMember} />);
   }
+
   return (
     <div className='displayBox'>
       <br></br>
