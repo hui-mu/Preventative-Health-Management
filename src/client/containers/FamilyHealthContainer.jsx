@@ -37,20 +37,24 @@ const setNewMemberActionCreator = (name, gender, age) => ({
   payload: { name: name, gender: gender, age: age },
 });
 
-const queryHealthActionCreator = () => ({
+const queryHealthActionCreator = (arg) => ({
   type: QUERY_HEALTH,
+  payload: arg,
 });
 
 const mapStateToProps = state => ({
   memberList: state.health.memberList,
-
+  age: state.age,
+  gender: state.gender,
 });
 
 const mapDispatchToProps = dispatch => ({
   deleteMember: (memberId) => dispatch(deleteMemberActionCreator(memberId)),
   addMember: () => dispatch(addMemberActionCreator()),
   setNewMember: (name, gender, age) => dispatch(setNewMemberActionCreator(name, gender, age)),
-  queryHealth: () => dispatch(queryHealthActionCreator()),
+  queryHealth: (arg) => {
+    return dispatch(queryHealthActionCreator(arg))
+  },
 });
 
 class FamilyHealthContainer extends Component {
@@ -58,10 +62,29 @@ class FamilyHealthContainer extends Component {
     super(props);
   }
 
+  async query() {
+    await fetch(`https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${this.props.age}&sex=${this.props.gender}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log("?????? query api", data.Result.Resources.all.Resource);
+        const resource = data.Result.Resources.all.Resource;
+        const health = [];
+        for (let i = 0; i < resource.length; i++) {
+          health.push(resource[i].Title);
+        }
+        console.log("inside!!!", health);
+        // console.log('???????', state.name)
+        this.props.queryHealth(health);
+      })
+  };
+
   render() {
     return (
       <div className="innerbox">
-        <MemberCreator setNewMember={this.props.setNewMember} queryHealth={this.props.queryHealth} addMember={this.props.addMember} />
+        <MemberCreator setNewMember={this.props.setNewMember} queryHealth={() => this.query()} addMember={this.props.addMember} />
         <MemberDisplay memberList={this.props.memberList} deleteMember={this.props.deleteMember} />
       </div>
     );

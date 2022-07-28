@@ -53,7 +53,7 @@ const memberSchema = new Schema({
   name: { type: String, required: true },
   gender: { type: String, required: true },
   age: { type: Number, required: true },
-  health: { type: String, required: true }
+  health: { type: [], required: true }
 });
 
 const member = mongoose.model('member', memberSchema);

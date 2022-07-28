@@ -22,7 +22,8 @@ const initialState = {
   age: '',
   gender: '',
   name: '',
-  healthInfo: ''
+  // healthInfo: ''
+  healthInfo: []
 };
 
 const healthReducer = (state = initialState, action) => {
@@ -61,7 +62,8 @@ const healthReducer = (state = initialState, action) => {
         age: '',
         gender: '',
         name: '',
-        healthInfo: ''
+        // healthInfo: '',
+        healthInfo: []
       }
     };
     case DELETE_MEMBER: {
@@ -77,20 +79,15 @@ const healthReducer = (state = initialState, action) => {
         totalMembers,
         memberList: newMemberList,
       }
-    }
+    };
     case QUERY_HEALTH: {
-      // const healthInfo = fetch(`https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${state.age}&sex=${state.gender}`, {
-      //   method: 'GET',
-      //   headers: { 'Content-Type': 'application/json' },
-      // })
-      //   .then(res => res.json())
-      //   .then
-      const healthInfo = 'toBeFetchedFromApi';
+
+      // const healthInfo = ['toBeFetchedFromApi'];
       return {
         ...state,
-        healthInfo: healthInfo
+        healthInfo: action.payload
       }
-    }
+    };
     case SET_NEW_MEMBER: {
       return {
         ...state,
@@ -98,12 +95,11 @@ const healthReducer = (state = initialState, action) => {
         gender: action.payload.gender,
         age: action.payload.age,
       }
-
-    }
+    };
     default: {
       return state;
     }
-  }
+  };
 }
 
 
