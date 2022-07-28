@@ -23,6 +23,7 @@ const MemberDisplay = props => {
     <div className='displayBox'>
       <br></br>
       <h4 class="fs-5">Members</h4>
+      {console.log(members)}
       {members}
     </div>
   );

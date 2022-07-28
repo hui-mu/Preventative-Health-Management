@@ -31,7 +31,8 @@ const MemberCreator = props => {
       <br></br>
       <div>
         <button type="button" class="btn btn-outline-primary me-3" onClick={props.queryHealth}>Query Health Info</button>
-        <button type="button" class="btn btn-outline-primary me-3" onClick={props.addMarket}>Add Member</button>
+        <button type="button" class="btn btn-outline-primary me-3" onClick={props.addMember}>Add Member</button>
+        <button type="button" class="btn btn-outline-primary me-3">Send Message</button>
       </div>
 
     </div >

@@ -75,10 +75,10 @@ const healthReducer = (state = initialState, action) => {
       // })
       //   .then(res => res.json())
       //   .then
-      const healthInfo = 'toBeFetchedFromApi'
+      const healthInfo = 'toBeFetchedFromApi';
       return {
         ...state,
-        healthInfo: action.payload
+        healthInfo: healthInfo
       }
     }
     case SET_NEW_MEMBER: {

@@ -37,9 +37,8 @@ const setNewMemberActionCreator = (name, gender, age) => ({
   payload: { name: name, gender: gender, age: age },
 });
 
-const queryHealthActionCreator = (healthInfo) => ({
+const queryHealthActionCreator = () => ({
   type: QUERY_HEALTH,
-  payload: healthInfo,
 });
 
 const mapStateToProps = state => ({
