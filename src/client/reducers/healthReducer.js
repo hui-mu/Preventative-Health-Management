@@ -40,6 +40,16 @@ const healthReducer = (state = initialState, action) => {
         'age': state.age,
         'health': state.healthInfo,
       }
+
+      newMember.userEmail = 'fooooo';
+      // request to update database
+      fetch('/member/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'Application/JSON' },
+        body: JSON.stringify(newMember)
+      }).then(res => res.json()).then(data => console.log(data));
+
+      // update state
       memberList = state.memberList.slice();
       memberList.push(newMember);
 

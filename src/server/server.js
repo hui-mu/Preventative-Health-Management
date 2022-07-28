@@ -20,7 +20,7 @@ app.use('/auth', userRouter); // get /login; post /register; post /reset; get /l
 
 app.use('/admin', adminRouter);
 
-app.use('/health', healthRouter);
+app.use('/member', healthRouter);
 
 // handle req to non-existing pages
 app.use((req, res) => res.status(404).send('You are looking for a page that doesn\'t exist...'));
